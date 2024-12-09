@@ -4,7 +4,7 @@
 from flask import Flask,render_template,request
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
-from wtforms.validators import DataRequired,Email
+from wtforms.validators import DataRequired
 import datetime
 
 #Configuracion del servidor flask
@@ -16,7 +16,7 @@ class UsuarioForm(FlaskForm):
     nombre = StringField("Nombre: ",validators= [DataRequired()])
     apellido = StringField("Apellido: ",validators=[DataRequired()])
     numeroCedula = StringField("Numero de Cedula: ",validators=[DataRequired()])
-    correo = StringField("Correo: ",validators=[DataRequired(),Email() ])
+    correo = StringField("Correo: ",validators=[DataRequired()])
     contraseña = StringField("Contraseña", validators=[DataRequired()])
     submit = SubmitField("Registrar")
 
